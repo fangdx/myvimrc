@@ -28,6 +28,21 @@ function! MySys()
     endif
 endfunction
 
+filetype off
+
+if has("unix")
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+else
+    set rtp+=~/vimfiles/bundle/vundle/
+    call vundle#rc()
+endif
+Bundle 'gmarik/vundle'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-fugitive'
+
+filetype on
+
 " autocmd
 autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost vimrc source ~/.vimrc
@@ -43,10 +58,13 @@ if MySys() == "mac"
     map <D-e> <C-e>
 endif
 
+call pathogen#infect()
+
+syntax on
+
 filetype plugin on
 filetype indent on
 
-syntax on
 set ruler
 
 
