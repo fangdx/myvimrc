@@ -1,0 +1,4 @@
+myvimrc
+=======
+
+my vimrc dict
