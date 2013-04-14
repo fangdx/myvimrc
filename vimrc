@@ -18,6 +18,8 @@ set novisualbell
 set nocompatible
 set history=400
 
+colorscheme default
+
 function! MySys()
     if has("win32") || has("win64")
         return "windows"
@@ -40,6 +42,7 @@ endif
 Bundle 'gmarik/vundle'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-fugitive'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 filetype on
 
@@ -57,6 +60,12 @@ if MySys() == "mac"
     map <D-y> <C-y>
     map <D-e> <C-e>
 endif
+
+" for indent_guides
+let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=lightgrey
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 call pathogen#infect()
 
