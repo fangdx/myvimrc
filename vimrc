@@ -43,6 +43,7 @@ Bundle 'gmarik/vundle'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype on
 
